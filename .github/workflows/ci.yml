@@ -11,4 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "CI placeholder - build/test steps go here"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - run: npm install
+      - run: npm test
